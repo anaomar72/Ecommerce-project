@@ -24,7 +24,7 @@ function ProductList(){
   },[])
   return <div>
     <Header search={handleSearch}/>
-  {loading==true ? <ClipLoader className=" ml-[500px]" loading={loading}/> : <div className="grid grid-cols-[160px_160px]   sm:grid-cols-[300px_300px_300px_300px] sm:gap-5 gap-6   justify-center">
+  {loading==true ? <ClipLoader className=" ml-[500px] items-center" loading={loading}/> : <div className="grid grid-cols-[160px_160px]   sm:grid-cols-[300px_300px_300px_300px] sm:gap-5 gap-6   justify-center">
     {
         data.filter((SearchProduct)=>{
             return searchItem.toLowerCase()== "" ? SearchProduct :

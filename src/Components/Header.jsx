@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 function Header({search}){
+    const numberOfItem=useSelector((state)=>state.cart.items)
     return <div className="fixed w-full ">
     <div className="bg-primaryColor text-white flex justify-around sm:px-20 px-1 py-5 ">
         <h1 className="text-white sm:text-3xl text-1xl">eSuuq</h1>
@@ -9,7 +12,9 @@ function Header({search}){
         <form >
             <input onChange={search} className="sm:w-[400px] h-[40px]  rounded text-black" type="text" placeholder="Search item" />
         </form>
-        <h1 className="text-yellow-200 sm:text-4xl text-2xl"><i class="fa-solid fa-cart-shopping"></i></h1>
+        <Link to="/cart">
+       <i class="fa-solid fa-cart-shopping text-yellow-200 sm:text-4xl text-2xl ">{numberOfItem.length }</i>
+        </Link>
     </div>
     </div>
 }
